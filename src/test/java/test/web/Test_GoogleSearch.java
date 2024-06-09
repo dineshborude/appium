@@ -1,14 +1,13 @@
 package test.web;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.objects.web.GoogleSearch;
+import java.util.List;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +25,18 @@ public class Test_GoogleSearch {
         driver.get("https://www.google.com/");
 
 
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        int lengthOfLinks = links.size();
+        System.out.println(lengthOfLinks);
+
+        // Print the URLs of all links
+        for (WebElement link : links) {
+            String url = link.getAttribute("href");
+            System.out.println(url);
+        }
+
+        ButtonClicker
+
     }
 
     @Test
@@ -41,6 +52,10 @@ public class Test_GoogleSearch {
 
 
         search.clickOnSearchButton();
+
+
+
+
     }
 
 
