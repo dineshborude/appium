@@ -35,7 +35,7 @@ public class Test_GoogleSearch {
             System.out.println(url);
         }
 
-        ButtonClicker
+//        ButtonClicker
 
     }
 
